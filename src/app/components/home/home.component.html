@@ -1,4 +1,7 @@
 <div class="home-container">
+  <!-- Indicador de estado offline -->
+  <app-offline-indicator></app-offline-indicator>
+
   <!-- Header -->
   <header class="header">
     <button class="menu-button">
@@ -6,7 +9,7 @@
       <span class="menu-icon"></span>
       <span class="menu-icon"></span>
     </button>
-    <img src="assets/utslogo.psng" alt="UTS Logo" class="logo" />
+    <img src="assets/utslogo.png" alt="UTS Logo" class="logo" />
   </header>
 
   <!-- Main Content -->
@@ -59,7 +62,7 @@
         </div>
         <div class="stat-info">
           <div class="stat-number">{{ reservasActivas }}</div>
-          <div class="stat-label">Active</div>
+          <div class="stat-label">Activas</div>
         </div>
       </div>
     </div>
@@ -101,6 +104,7 @@
         </div>
       </div>
     </div>
+    
     <!-- Accesos Rápidos -->
     <div class="section">
       <h2 class="section-title">Accesos rápidos</h2>

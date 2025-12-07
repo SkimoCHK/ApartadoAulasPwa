@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import {
   BrowserModule,
   provideClientHydration,
@@ -11,11 +11,27 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { NuevaReservaComponent } from './components/nueva-reserva/nueva-reserva.component';
 import { LoginComponent } from './components/login/login.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { OfflineIndicatorComponent } from './components/offline-indicator/offline-indicator.component';
+import { NetworkStatusService } from './services/network-status.service';
+import { OfflineStorageService } from './services/offline-storage.service';
+import { SyncService } from './services/sync.service';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NuevaReservaComponent, LoginComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [provideClientHydration()],
-  bootstrap: [AppComponent],
+  declarations: [AppComponent, HomeComponent, NuevaReservaComponent, LoginComponent, OfflineIndicatorComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, 
+  
+  ServiceWorkerModule.register('ngsw-worker.js', {
+  enabled: !isDevMode(),
+  // Register the ServiceWorker as soon as the application is stable
+  // or after 30 seconds (whichever comes first).
+  registrationStrategy: 'registerWhenStable:30000'
+})],
+  providers: [
+    provideClientHydration(),
+    NetworkStatusService,
+    OfflineStorageService,
+    SyncService
+  ],  bootstrap: [AppComponent],
 })
 export class AppModule {}

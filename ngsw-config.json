@@ -1,0 +1,69 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-aulas",
+      "urls": [
+        "/api/Aula",
+        "/api/Aula/*"
+      ],
+      "cacheConfig": {
+        "maxSize": 100,
+        "maxAge": "1d",
+        "timeout": "10s",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "api-disponibilidad",
+      "urls": [
+        "/api/SolicitudApartado/Disponibilidad*"
+      ],
+      "cacheConfig": {
+        "maxSize": 50,
+        "maxAge": "1h",
+        "timeout": "10s",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "api-user",
+      "urls": [
+        "/api/Auth/GetInfoUser*"
+      ],
+      "cacheConfig": {
+        "maxSize": 10,
+        "maxAge": "30m",
+        "timeout": "10s",
+        "strategy": "freshness"
+      }
+    }
+  ]
+}
