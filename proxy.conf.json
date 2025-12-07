@@ -3,6 +3,8 @@
     "target": "https://apartadoaulasapi-1.onrender.com",
     "secure": false,
     "changeOrigin": true,
-    "logLevel": "debug"
+    "pathRewrite": {
+      "^/api": "/api"
+    }
   }
 }

@@ -14,12 +14,14 @@ import {
 } from '../models/interfaces';
 import { OfflineStorageService } from './offline-storage.service';
 import { NetworkStatusService } from './network-status.service';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ReservaService {
-  private apiUrl = '/api';
+  // private apiUrl = '/api';
+  private apiUrl = environment.apiUrl
 
   constructor(
     private http: HttpClient,

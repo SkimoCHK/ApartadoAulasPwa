@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { Aula } from '../models/interfaces';
 import { firstValueFrom } from 'rxjs';
 import { OfflineStorageService } from './offline-storage.service';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AulaService {
-  private apiUrl = '/api';
+  private apiUrl = environment.apiUrl
 
   constructor(
     private http: HttpClient,

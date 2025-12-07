@@ -1,0 +1,13 @@
+{
+  "buildCommand": "ng build --configuration production",
+  "outputDirectory": "dist/apartado-aulas-pwa/browser",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "API_URL": "https://tu-api-backend.com"
+  }
+}

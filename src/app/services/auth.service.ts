@@ -3,12 +3,15 @@ import { LoginDto, LoginResponse } from '../models/interfaces';
 import { BehaviorSubject, firstValueFrom, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = '/api/Auth';
+  // private apiUrl = '/api/Auth';
+  private apiUrl =   `${environment.apiUrl}/Auth`
+    
   private currentUserSubject: BehaviorSubject<LoginResponse | null>;
   public currentUser: Observable<LoginResponse | null>;
 

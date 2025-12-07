@@ -4,10 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:ApartadoAulasPwa": "node dist/apartado-aulas-pwa/server/server.mjs"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
