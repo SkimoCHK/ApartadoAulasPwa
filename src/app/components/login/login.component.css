@@ -1,0 +1,261 @@
+/* Fondo general - igual que el home */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #d4f1f4 0%, #e8f8f9 100%);
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Tarjeta */
+.login-card {
+  background: white;
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: 26px;
+  color: #00796b;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 14px;
+  color: #424242;
+  font-weight: 500;
+}
+
+/* Input wrapper con ícono */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  color: #009688;
+  pointer-events: none;
+}
+
+input {
+  width: 100%;
+  padding: 14px 14px 14px 44px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+input:focus {
+  outline: none;
+  border-color: #009688;
+  box-shadow: 0 0 0 3px rgba(0, 150, 136, 0.1);
+}
+
+/* Password eye button */
+.eye-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: color 0.2s;
+  border-radius: 6px;
+}
+
+.eye-btn:hover {
+  color: #009688;
+  background: #e0f2f1;
+}
+
+.eye-btn:active {
+  transform: scale(0.95);
+}
+
+/* Error box */
+.error-box {
+  background: #ffebee;
+  color: #c62828;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  border: 1px solid #ef9a9a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.4;
+}
+
+.error-box svg {
+  flex-shrink: 0;
+}
+
+/* Botón principal - igual que el home */
+.btn-primary {
+  margin-top: 8px;
+  background: #009688;
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 150, 136, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background: #00796b;
+  box-shadow: 0 4px 12px rgba(0, 150, 136, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Spinner */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Footer */
+.footer-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #009688;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  color: #00796b;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 32px 24px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  input {
+    padding: 13px 13px 13px 42px;
+    font-size: 14px;
+  }
+
+  .btn-primary {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .login-card {
+    padding: 28px 20px;
+  }
+
+  .logo {
+    height: 36px;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .login-form {
+    gap: 16px;
+  }
+}

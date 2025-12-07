@@ -1,10 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { NuevaReservaComponent } from './components/nueva-reserva/nueva-reserva.component';
+import { authGuard } from './guards/auth.guard';
+import { LoginComponent } from './components/login/login.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:'login',
+    component:LoginComponent  
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate:[authGuard]
+  },
+  {
+    path: 'nueva-reserva',
+    component: NuevaReservaComponent,
+    canActivate:[authGuard]
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
