@@ -9,6 +9,7 @@ import { catchError } from 'rxjs/operators';
 import {
   CreateSolicitudDto,
   DisponibilidadHora,
+  ReservaHistorial,
   SolicitudApartado,
 } from '../models/interfaces';
 import { OfflineStorageService } from './offline-storage.service';
@@ -161,5 +162,31 @@ export class ReservaService {
 
   getSolicitudById(id: number): Observable<SolicitudApartado> {
     return this.http.get<SolicitudApartado>(`${this.apiUrl}/${id}`);
+  }
+
+  /**
+   * Obtiene el historial de reservas del usuario
+   */
+  async getHistorialReservas(usuarioId: number): Promise<ReservaHistorial[]> {
+    try {
+      const response = await new Promise<ReservaHistorial[]>(
+        (resolve, reject) => {
+          this.http
+            .get<ReservaHistorial[]>(
+              `${this.apiUrl}/SolicitudApartado/GetHistorialReservas?userId=${usuarioId}`
+            )
+            .subscribe({
+              next: resolve,
+              error: reject,
+            });
+        }
+      );
+
+      console.log('✅ Historial cargado exitosamente');
+      return response;
+    } catch (error: any) {
+      console.error('Error cargando historial:', error);
+      throw error;
+    }
   }
 }

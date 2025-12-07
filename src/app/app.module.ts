@@ -16,9 +16,10 @@ import { OfflineIndicatorComponent } from './components/offline-indicator/offlin
 import { NetworkStatusService } from './services/network-status.service';
 import { OfflineStorageService } from './services/offline-storage.service';
 import { SyncService } from './services/sync.service';
+import { HistorialComponent } from './components/historial/historial.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NuevaReservaComponent, LoginComponent, OfflineIndicatorComponent],
+  declarations: [AppComponent, HomeComponent, NuevaReservaComponent, LoginComponent, OfflineIndicatorComponent, HistorialComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, 
   
   ServiceWorkerModule.register('ngsw-worker.js', {

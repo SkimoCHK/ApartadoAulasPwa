@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://localhost:44333",
+    "target": "https://apartadoaulasapi-1.onrender.com",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"

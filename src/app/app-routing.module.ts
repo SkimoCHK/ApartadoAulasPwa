@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NuevaReservaComponent } from './components/nueva-reserva/nueva-reserva.component';
 import { authGuard } from './guards/auth.guard';
 import { LoginComponent } from './components/login/login.component';
+import { HistorialComponent } from './components/historial/historial.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,11 @@ const routes: Routes = [
   {
     path: 'nueva-reserva',
     component: NuevaReservaComponent,
+    canActivate:[authGuard]
+  },
+  {
+    path: 'historial',
+    component: HistorialComponent,
     canActivate:[authGuard]
   },
   {

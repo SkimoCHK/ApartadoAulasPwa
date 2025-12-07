@@ -59,9 +59,7 @@ export class HomeComponent implements OnInit {
   }
 
   onHistorial(): void {
-    console.log('Historial clicked');
-    // TODO: Navegar a la página de historial
-    // this.router.navigate(['/historial']);
+    this.router.navigate(['/historial']);
   }
 
   onPerfil(): void {
