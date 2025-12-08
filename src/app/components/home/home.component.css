@@ -10,7 +10,7 @@
 /* Header */
 .header {
   display: flex;
-  align-items: center;
+  align-items: start; 
   padding: 16px 20px;
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -41,8 +41,6 @@
 
 .logo {
   height: 32px;
-  width: auto;
-  flex: 1;
 }
 
 .logout-button {
